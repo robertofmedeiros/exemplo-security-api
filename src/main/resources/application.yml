@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/exemplo_security
+    password: 601034
+    username: postgres
+    driverClassName: org.postgresql.Driver
+  security:
+    token:
+      secret: "exemplo-security"
+      expiration_time: 30
