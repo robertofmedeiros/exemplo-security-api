@@ -5,6 +5,7 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @SQLDelete(sql = "UPDATE usuario SET deleted_at = now() WHERE id=?")
@@ -24,6 +25,12 @@ public class Usuarios {
 
     @Column
     private LocalDateTime deletedAt;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "usuarios_roles",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "roles_id"))
+    private List<Roles> roles;
 
     public Long getId() {
         return id;
@@ -57,4 +64,11 @@ public class Usuarios {
         this.deletedAt = deletedAt;
     }
 
+    public List<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Roles> roles) {
+        this.roles = roles;
+    }
 }
