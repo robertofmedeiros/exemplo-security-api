@@ -1,4 +1,9 @@
 spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
   jpa:
     database: POSTGRESQL
     hibernate:
@@ -6,7 +11,7 @@ spring:
     show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/exemplo_security
-    password: 601034
+    password: Sen@c2023
     username: postgres
     driverClassName: org.postgresql.Driver
   security:

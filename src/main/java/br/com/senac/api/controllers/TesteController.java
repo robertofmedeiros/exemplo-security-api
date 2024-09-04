@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/teste")
 public class TesteController {
 
-    @PreAuthorize("@rolesService.hasAnyRole('TESTE')")
-    //@PreAuthorize("hasAnyRole('TESTE', 'ADMIN')")
+    //@PreAuthorize("@rolesService.hasAnyRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/ola")
     public ResponseEntity<String> testeWs(){
         return ResponseEntity.ok("ok");
