@@ -15,6 +15,14 @@ public class Roles {
     @Column
     private String descricao;
 
+    public Roles() {
+    }
+
+    public Roles(String permissao, String descricao) {
+        this.permissao = permissao;
+        this.descricao = descricao;
+    }
+
     public Long getId() {
         return id;
     }
