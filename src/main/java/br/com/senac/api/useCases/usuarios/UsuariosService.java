@@ -6,6 +6,7 @@ import br.com.senac.api.jwt.TokenService;
 import br.com.senac.api.useCases.usuarios.domains.UsuariosLoginRequestDom;
 import br.com.senac.api.useCases.usuarios.domains.UsuariosLoginResponseDom;
 import br.com.senac.api.useCases.usuarios.implement.UsuariosRepository;
+import br.com.senac.api.useCases.usuarios.implement.UsuariosRolesRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,6 +28,9 @@ public class UsuariosService {
     @Autowired
     private TokenService tokenService;
 
+    @Autowired
+    private UsuariosRolesRepository usuariosRolesRepository;
+
     @Transactional
     public UsuariosLoginResponseDom cadastroUsuario(UsuariosLoginRequestDom usuario) throws Exception {
 
@@ -35,14 +39,7 @@ public class UsuariosService {
         usuarioEntidade.setLogin(usuario.getLogin());
         usuarioEntidade.setSenha(passwordEncoder.encode(usuario.getSenha()));
 
-        List<Roles> roles = new ArrayList<>();
-
-        for(String role : usuario.getRoles()) {
-            Roles rolePersist = new Roles();
-            rolePersist.setPermissao(role);
-
-            roles.add(rolePersist);
-        }
+        List<Roles> roles = usuariosRolesRepository.findByPermissaoIn(usuario.getRoles());
 
         usuarioEntidade.setRoles(roles);
 
