@@ -1,5 +1,6 @@
 package br.com.senac.api;
 
+import br.com.senac.api.services.email.EmailService;
 import br.com.senac.api.useCases.usuarios.UsuariosService;
 import br.com.senac.api.useCases.usuarios.domains.UsuariosLoginRequestDom;
 import br.com.senac.api.useCases.usuarios.domains.UsuariosLoginResponseDom;
@@ -21,6 +22,9 @@ class ExemploSecurityApiApplicationTests {
 
 	@Autowired
 	private UsuariosService usuariosService;
+
+	@Autowired
+	private EmailService emailService;
 
 	@Test
 	@DisplayName("Caso de teste - Usuário (Cadastro)")
@@ -53,6 +57,12 @@ class ExemploSecurityApiApplicationTests {
 		assertAll(
 				"Teste de usuario - Login",
 				() -> assertNotNull(usuarioResult.getToken(), "Token não foi gerado"));
+	}
+
+	@Test
+	@DisplayName("Caso de teste - Email")
+	void testeEnvioEmail() {
+		emailService.sendMail("roberto.medeiros@prof.sc.senac.br", "Teste Email", "teste");
 	}
 
 }

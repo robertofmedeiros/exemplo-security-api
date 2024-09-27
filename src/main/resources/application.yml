@@ -18,3 +18,14 @@ spring:
     token:
       secret: "exemplo-security"
       expiration_time: 30
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    host: smtp.gmail.com
+    username: roberto.fmedeiros62@gmail.com
+    password: "bbul jtmq otqv evgd"
+    port: '587'

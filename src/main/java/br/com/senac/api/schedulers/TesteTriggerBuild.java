@@ -24,7 +24,7 @@ public class TesteTriggerBuild {
 
         Trigger trigger = TriggerBuilder.newTrigger()
                 .withIdentity("testeTRIGGER","grupo01")
-                .withSchedule(CronScheduleBuilder.cronSchedule("*/1 * * ? * * *"))
+                .withSchedule(CronScheduleBuilder.cronSchedule("0 */5 * ? * * *"))
                 .forJob(jobDetail())
                 .build();
 
