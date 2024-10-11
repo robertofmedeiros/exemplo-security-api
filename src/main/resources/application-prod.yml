@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres
-    password: Q7MKS!4TA-4.Qz3
-    username: postgres.pgpgfjqwmzmcjxvcebdr
+    url: jdbc:postgresql://dpg-cs4rh4l6l47c73a6ja5g-a.oregon-postgres.render.com:5432/exemplo_security
+    password: sYZmSDO844x7EpUUmb6SuK1h1f20pB63
+    username: exemplo_security_user
