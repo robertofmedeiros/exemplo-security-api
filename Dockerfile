@@ -1,4 +1,4 @@
-FROM maven:3.8.7-eclipse-temurin-23-alpine as build
+FROM maven:3.9.9-eclipse-temurin-23-alpine as build
 
 COPY . /usr/src/mymaven/
 
