@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres-docker:5466/exemplo_security
+    url: jdbc:postgresql://postgres-docker:5432/exemplo_security
     password: 601034
     username: postgres
