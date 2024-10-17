@@ -35,7 +35,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Setup config
-        run: |
+        run:
           mkdir config
           echo 'spring.datasource.url=jdbc:postgresql://postgres:5432/school_management' > config/application.properties
     - name: Test with Maven
