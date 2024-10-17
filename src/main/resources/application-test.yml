@@ -3,4 +3,4 @@ spring:
     hibernate:
       ddl-auto: create-drop
   datasource:
-    url: jdbc:postgresql://postgresql:5432/exemplo_security_teste
+    url: jdbc:postgresql://localhost:5432/exemplo_security_teste
