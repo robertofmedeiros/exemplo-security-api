@@ -1,0 +1,19 @@
+name: exemplo-security-api
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres-docker
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: exemplo_security
+    ports:
+      - 5432:5432
+  db-test:
+    image: postgres:latest
+    container_name: postgres-docker-test
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: exemplo_security_teste
+    ports:
+      - 5434:5432

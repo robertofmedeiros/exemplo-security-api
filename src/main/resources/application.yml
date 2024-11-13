@@ -10,8 +10,8 @@ spring:
       ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/exemplo_security?createDatabaseIfNotExist=true
-    password: 601034
+    url: jdbc:postgresql://localhost:5432/exemplo_security
+    password: 1234
     username: postgres
     driverClassName: org.postgresql.Driver
   security:
