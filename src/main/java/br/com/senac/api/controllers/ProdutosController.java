@@ -18,7 +18,6 @@ public class ProdutosController {
     private ProdutosService produtosService;
 
     @GetMapping("/carregar")
-    @PreAuthorize("@funcionalidadeService.validarPermissoes('ProdutosController', 'listagem')")
     public ResponseEntity<?> carregarProdutos(ProdutosRequestQueryDom paginacao) {
         try {
 
